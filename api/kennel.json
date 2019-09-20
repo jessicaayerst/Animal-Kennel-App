@@ -3,17 +3,26 @@
         {
             "id": 1,
             "name": "Doodles",
-            "breed": "Poodle"
+            "breed": "Poodle",
+            "ownerId": 1,
+            "employeeId": 2,
+            "locationId": 1
         },
         {
             "id": 2,
             "name": "Decker",
-            "breed": "German Sheperd"
+            "breed": "German Sheperd",
+            "ownerId": 2,
+            "employeeId": 1,
+            "locationId": 2
         },
         {
             "id": 3,
             "name": "Esme",
-            "breed": "Pitbull"
+            "breed": "Pitbull",
+            "ownerId": 3,
+            "employeeId": 3,
+            "locationId": 1
         }
     ],
     "locations": [
@@ -48,18 +57,18 @@
     "owners": [
         {
             "id": 1,
-            "owner": "Jill Space",
-            "email": "jill123@gmail.com"
+            "name": "Jill Space",
+            "phone": "(304)333-3698"
         },
         {
             "id": 2,
-            "owner": "John Space",
-            "email": "john123@gmail.com"
+            "name": "John Space",
+            "phone": "(304)456-8745"
         },
         {
             "id": 3,
-            "owner": "Jessi Jones",
-            "email": "jessijones@gmail.com"
+            "name": "Jessi Jones",
+            "phone": "(606)123-8547"
         }
     ]
 }

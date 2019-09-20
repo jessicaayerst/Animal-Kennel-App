@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Animal.css'
 
 class AnimalCard extends Component {
   render() {
@@ -10,6 +11,9 @@ class AnimalCard extends Component {
           </picture>
           <h3>Name: <span className="card-petname">{this.props.animalProp.name}</span></h3>
           <p>Breed: {this.props.animalProp.breed}</p>
+          <p>Owner: {this.props.animalProp.owner.name}</p>
+          <p>Location: {this.props.animalProp.location.city}</p>
+          <p>Assigned To: {this.props.animalProp.employee.name}</p>
         </div>
       </div>
     );

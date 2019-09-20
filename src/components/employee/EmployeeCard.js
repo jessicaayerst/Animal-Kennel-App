@@ -9,8 +9,8 @@ class EmployeeCard extends Component {
           <picture>
             <img src={require('./emp.png')} alt="Employee" />
           </picture>
-          <h3>Employee: <span className="card-employeeName">Jessica Ayerst</span></h3>
-          <p>Email: jessicaayerst@gmail.com</p>
+          <h3>Employee: <span className="card-employeeName">{this.props.employeeProp.name}</span></h3>
+          <p>Email: {this.props.employeeProp.email}</p>
         </div>
       </div>
     );
