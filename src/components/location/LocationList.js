@@ -7,7 +7,19 @@ class LocationList extends Component {
     //define what this component needs to render
     state = {
         locations: [],
-    }
+    };
+
+deleteLocation = id => {
+        LocationManager.delete(id)
+        .then(() => {
+          LocationManager.getAll()
+          .then((newLocations) => {
+            this.setState({
+                locations: newLocations
+            })
+          })
+        })
+      }
 
 componentDidMount(){
     console.log("LOCATION LIST: ComponentDidMount");
@@ -25,7 +37,9 @@ render(){
 
     return(
         <div className="container-cards">
-            {this.state.locations.map(singleLocation => <LocationCard key={singleLocation.id} locationProp={singleLocation} />)}
+            {this.state.locations.map(singleLocation =>
+            singleLocation.open ?
+            <LocationCard key={singleLocation.id} locationProp={singleLocation} deleteLocation={this.deleteLocation} /> : ``)}
         </div>
     )
 }

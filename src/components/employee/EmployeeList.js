@@ -7,7 +7,19 @@ import React, { Component } from 'react'
         //define what this component needs to render
         state = {
             employees: [],
-        }
+        };
+
+    deleteEmployee = id => {
+            EmployeeManager.delete(id)
+            .then(() => {
+              EmployeeManager.getAll()
+              .then((newEmployees) => {
+                this.setState({
+                    employees: newEmployees
+                })
+              })
+            })
+          }
 
     componentDidMount(){
         console.log("EMPLOYEE LIST: ComponentDidMount");
@@ -25,7 +37,9 @@ import React, { Component } from 'react'
 
         return(
             <div className="container-cards">
-            {this.state.employees.map(singleEmployee => <EmployeeCard key={singleEmployee.id} employeeProp={singleEmployee} />)}
+            {this.state.employees.map(singleEmployee =>
+                singleEmployee.active ?
+                <EmployeeCard key={singleEmployee.id} employeeProp={singleEmployee} deleteEmployee={this.deleteEmployee}/> : ``)}
         </div>
         )
     }

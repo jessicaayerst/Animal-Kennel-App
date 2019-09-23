@@ -7,7 +7,19 @@ class OwnerList extends Component {
     //define what this component needs to render
     state = {
         owners: [],
-    }
+    };
+
+deleteOwner = id => {
+        OwnerManager.delete(id)
+        .then(() => {
+          OwnerManager.getAll()
+          .then((newOwners) => {
+            this.setState({
+                owners: newOwners
+            })
+          })
+        })
+      }
 
 componentDidMount(){
     console.log("OWNER LIST: ComponentDidMount");
@@ -25,7 +37,9 @@ render(){
 
     return(
         <div className="container-cards">
-            {this.state.owners.map(singleOwner => <OwnerCard key={singleOwner.id} ownerProp={singleOwner} />)}
+            {this.state.owners.map(singleOwner =>
+            singleOwner.active ?
+            <OwnerCard key={singleOwner.id} ownerProp={singleOwner} deleteOwner={this.deleteOwner} /> : ``)}
         </div>
     )
 }

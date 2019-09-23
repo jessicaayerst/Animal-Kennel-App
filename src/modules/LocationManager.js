@@ -6,5 +6,16 @@ export default {
   },
   getAll() {
     return fetch(`${remoteURL}/locations`).then(result => result.json())
+  },
+  delete(id) {
+    return fetch(`${remoteURL}/locations/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          open: false
+        }),
+    })
   }
 }
