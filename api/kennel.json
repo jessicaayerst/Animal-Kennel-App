@@ -22,7 +22,7 @@
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull",
-      "available": false,
+      "available": true,
       "ownerId": 3,
       "employeeId": 3,
       "locationId": 1

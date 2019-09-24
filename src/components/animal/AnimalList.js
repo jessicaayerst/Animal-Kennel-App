@@ -9,18 +9,6 @@ class AnimalList extends Component {
         animals: [],
     };
 
-    deleteAnimal = id => {
-        AnimalManager.delete(id)
-            .then(() => {
-                AnimalManager.getAll()
-                    .then((newAnimals) => {
-                        this.setState({
-                            animals: newAnimals
-                        })
-                    })
-            })
-    }
-
     componentDidMount() {
         console.log("ANIMAL LIST: ComponentDidMount");
         //getAll from AnimalManager and hang on to that data; put it in state
@@ -39,7 +27,7 @@ class AnimalList extends Component {
             <div className="container-cards">
                 {this.state.animals.map(singleAnimal =>
                     singleAnimal.available ?
-                        <AnimalCard key={singleAnimal.id} animalProp={singleAnimal} deleteAnimal={this.deleteAnimal} /> : ``)}
+                        <AnimalCard key={singleAnimal.id} animalProp={singleAnimal}  /> : ``)}
             </div>
         )
     }

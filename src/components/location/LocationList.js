@@ -9,18 +9,6 @@ class LocationList extends Component {
         locations: [],
     };
 
-deleteLocation = id => {
-        LocationManager.delete(id)
-        .then(() => {
-          LocationManager.getAll()
-          .then((newLocations) => {
-            this.setState({
-                locations: newLocations
-            })
-          })
-        })
-      }
-
 componentDidMount(){
     console.log("LOCATION LIST: ComponentDidMount");
     //getAll from AnimalManager and hang on to that data; put it in state
@@ -39,7 +27,7 @@ render(){
         <div className="container-cards">
             {this.state.locations.map(singleLocation =>
             singleLocation.open ?
-            <LocationCard key={singleLocation.id} locationProp={singleLocation} deleteLocation={this.deleteLocation} /> : ``)}
+            <LocationCard key={singleLocation.id} locationProp={singleLocation} /> : ``)}
         </div>
     )
 }
