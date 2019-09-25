@@ -58,6 +58,12 @@
       "city": "Ashland",
       "address": "321 Peace Avenue",
       "open": true
+    },
+    {
+      "city": "Ironton, Ohio",
+      "address": "335 Main Street",
+      "open": true,
+      "id": 3
     }
   ],
   "employees": [
@@ -78,6 +84,18 @@
       "name": "Justice Jackson",
       "email": "justicej@gmail.com",
       "active": true
+    },
+    {
+      "name": "Tommy Spurlock",
+      "email": "tommy1@gmail.com",
+      "active": true,
+      "id": 4
+    },
+    {
+      "name": "Shawn Dead",
+      "email": "shawno@gmail.com",
+      "active": true,
+      "id": 5
     }
   ],
   "owners": [
