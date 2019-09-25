@@ -26,6 +26,24 @@
       "ownerId": 3,
       "employeeId": 3,
       "locationId": 1
+    },
+    {
+      "name": "Henry",
+      "breed": "Hound",
+      "available": true,
+      "id": 4,
+      "ownerId": 3,
+      "employeeId": 3,
+      "locationId": 1
+    },
+    {
+      "name": "Sophie",
+      "breed": "Chihuahua",
+      "available": false,
+      "ownerId": 1,
+      "employeeId": 1,
+      "locationId": 1,
+      "id": 5
     }
   ],
   "locations": [
@@ -53,7 +71,7 @@
       "id": 2,
       "name": "Joann Johnson",
       "email": "joann@gmail.com",
-      "active": false
+      "active": true
     },
     {
       "id": 3,
@@ -79,7 +97,7 @@
       "id": 3,
       "name": "Jessi Jones",
       "phone": "(606)123-8547",
-      "active": false
+      "active": true
     }
   ]
 }
