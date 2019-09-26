@@ -22,10 +22,22 @@ class AnimalDetail extends Component {
 }
 
   componentDidMount(){
-    console.log("AnimalDetail: ComponentDidMount");
+    // console.log("AnimalDetail: ComponentDidMount");
     //get(id) from AnimalManager and hang on to the data; put it into state
     AnimalManager.get(this.props.animalId)
     .then((animal) => {
+      console.log("this is animal", animal)
+      if(animal.name === undefined){
+        this.setState({
+          name: undefined,
+          breed: undefined,
+          owner: undefined,
+          location: undefined,
+          assignedTo: undefined,
+          loadingStatus: false
+        });
+      }
+       else {
       this.setState({
         name: animal.name,
         breed: animal.breed,
@@ -33,12 +45,15 @@ class AnimalDetail extends Component {
         location: animal.location.city,
         assignedTo: animal.employee.name,
         loadingStatus: false
-      });
+      })}
     });
+
   }
 
+
   render() {
-    return (
+
+    return this.state.name !== undefined ? (
       <div className="card">
         <div className="card-content">
           <picture>
@@ -52,7 +67,9 @@ class AnimalDetail extends Component {
           <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Discharge</button>
         </div>
       </div>
-    );
+    ) : (
+      <div>Animal is No Longer Available</div>
+    )
   }
 }
 
