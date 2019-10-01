@@ -1,15 +1,6 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles",
-      "breed": "Poodle",
-      "available": true,
-      "ownerId": 1,
-      "employeeId": 2,
-      "locationId": 1
-    },
-    {
       "id": 2,
       "name": "Decker",
       "breed": "German Sheperd",
@@ -20,12 +11,12 @@
     },
     {
       "id": 3,
-      "name": "Esme",
+      "name": "Esme1",
       "breed": "Pitbull",
-      "available": true,
-      "ownerId": 3,
-      "employeeId": 3,
-      "locationId": 1
+      "locationId": 1,
+      "ownerId": 1,
+      "employeeId": 1,
+      "available": true
     },
     {
       "name": "Henry",
@@ -53,6 +44,15 @@
       "employeeId": 1,
       "locationId": 1,
       "id": 6
+    },
+    {
+      "name": "Tomy",
+      "breed": "Horse",
+      "available": true,
+      "ownerId": 1,
+      "employeeId": 1,
+      "locationId": 1,
+      "id": 7
     }
   ],
   "locations": [

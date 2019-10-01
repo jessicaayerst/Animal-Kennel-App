@@ -13,6 +13,8 @@ class AnimalCard extends Component {
           <h3>Name: <span className="card-petname">{this.props.animalProp.name}</span></h3>
           <p>Breed: {this.props.animalProp.breed}</p>
           <Link to={`/animals/${this.props.animalProp.id}`}><button>Details</button></Link>
+          <button type="button"
+        onClick={() => {this.props.history.push(`/animals/${this.props.animalProp.id}/edit`)}}>Edit</button>
         </div>
       </div>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AnimalManager from '../../modules/AnimalManager';
-import './AnimalForm.css'
+import './AnimalForm.css';
 
 class AnimalForm extends Component {
     state = {
@@ -14,6 +14,7 @@ class AnimalForm extends Component {
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     };
+
 
     /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
     */
@@ -34,44 +35,44 @@ class AnimalForm extends Component {
 
             // Create the animal and redirect user to animal list
             AnimalManager.post(animal)
-            .then(() => this.props.history.push("/animals"));
+                .then(() => this.props.history.push("/animals"));
         }
     };
 
-    render(){
+    render() {
 
-        return(
+        return (
             <>
-            <form>
-                <fieldset>
-                    <div className="formgrid">
-                        <input
-                        type="text"
-                        required
-                        onChange={this.handleFieldChange}
-                        id="animalName"
-                        placeholder="Animal name"
-                        />
-                        <label htmlFor="animalName">Name</label>
-                        <input
-                        type="text"
-                        required
-                        onChange={this.handleFieldChange}
-                        id="breed"
-                        placeholder="Breed"
-                        />
-                        <label htmlFor="breed">Breed</label>
-                    </div>
-                    <div className="alignRight">
-                        <button
-                        type="button"
-                        disabled={this.state.loadingStatus}
-                        onClick={this.constructNewAnimal}
-                        >Submit</button>
-                    </div>
-                </fieldset>
-            </form>
-        </>
+                <form>
+                    <fieldset>
+                        <div className="formgrid">
+                            <label htmlFor="animalName">Name</label>
+                            <input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="animalName"
+                                placeholder="Animal name"
+                            />
+                            <label htmlFor="breed">Breed</label>
+                            <input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="breed"
+                                placeholder="Breed"
+                            />
+                        </div>
+                        <div className="alignRight">
+                            <button
+                                type="button"
+                                disabled={this.state.loadingStatus}
+                                onClick={this.constructNewAnimal}
+                            >Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </>
         )
     }
 }

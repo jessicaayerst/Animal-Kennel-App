@@ -35,7 +35,7 @@ class AnimalList extends Component {
             <div className="container-cards">
                 {this.state.animals.map(singleAnimal =>
                     singleAnimal.available ?
-                        <AnimalCard key={singleAnimal.id} animalProp={singleAnimal} /> : ``)}
+                        <AnimalCard key={singleAnimal.id} animalProp={singleAnimal} {...this.props} /> : ``)}
             </div>
             </>
         )

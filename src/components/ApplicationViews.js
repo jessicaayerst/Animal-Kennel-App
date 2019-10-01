@@ -10,9 +10,11 @@ import LocationDetail from './location/LocationDetail'
 import EmployeeDetail from './employee/EmployeeDetail'
 import OwnerDetail from './owner/OwnerDetail'
 import AnimalForm from './animal/AnimalForm'
+import AnimalEditForm from './animal/AnimalEditForm'
 import EmployeeForm from './employee/EmployeeForm'
 import LocationForm from './location/LocationForm'
 import Login from './auth/Login'
+import EmployeeWithAnimals from './employee/EmployeeWithAnimals'
 
 class ApplicationViews extends Component {
   isAuthenticated = () => localStorage.getItem("credentials") !== null;
@@ -31,14 +33,17 @@ class ApplicationViews extends Component {
             return <Redirect to="/login" />
           }
         }} />
-        <Route path="/animals/:animalId(\d+)" render={(props) => {
+        <Route exact path="/animals/:animalId(\d+)" render={(props) => {
           // Pass the animalId to the AnimalDetailComponent
           return this.isAuthenticated() ? <AnimalDetail {...props} animalId={parseInt(props.match.params.animalId)} /> : <Redirect to="/login" />
         }} />
         <Route path="/animals/new" render={(props) => {
           return this.isAuthenticated() ? <AnimalForm {...props} /> : <Redirect to="/login" />
         }} />
-
+        <Route path="/animals/:animalId(\d+)/edit" render={props => {
+            return <AnimalEditForm {...props} />
+          }}
+        />
         <Route exact path="/locations" render={(props) => {
           return this.isAuthenticated() ? <LocationList {...props} /> : <Redirect to="/login" />
         }} />
@@ -55,6 +60,10 @@ class ApplicationViews extends Component {
         <Route path="/employees/:employeeId(\d+)" render={(props) => {
           // Pass the employeeId to the EmployeeDetailComponent
           return this.isAuthenticated() ? <EmployeeDetail {...props} employeeId={parseInt(props.match.params.employeeId)} /> : <Redirect to="/login" />
+        }} />
+        <Route path="/employees/:employeeId(\d+)" render={(props) => {
+          // Pass the employeeId to the EmployeeDetailComponent
+          return this.isAuthenticated() ? <EmployeeWithAnimals {...props} employeeId={parseInt(props.match.params.employeeId)} /> : <Redirect to="/login" />
         }} />
         <Route path="/employees/new" render={(props) => {
           return this.isAuthenticated() ? <EmployeeForm {...props} /> : <Redirect to="/login" />
