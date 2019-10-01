@@ -7,6 +7,8 @@ import OwnerList from './owner/OwnerList'
 import AnimalList from './animal/AnimalList'
 import AnimalDetail from './animal/AnimalDetail'
 import LocationDetail from './location/LocationDetail'
+import EmployeeDetail from './employee/EmployeeDetail'
+import OwnerDetail from './owner/OwnerDetail'
 import AnimalForm from './animal/AnimalForm'
 import EmployeeForm from './employee/EmployeeForm'
 import LocationForm from './location/LocationForm'
@@ -18,7 +20,7 @@ class ApplicationViews extends Component {
     return (
       <React.Fragment>
         <Route path="/login" component={Login} />
-        
+
         <Route exact path="/" render={(props) => {
           return <Home />
         }} />
@@ -50,11 +52,19 @@ class ApplicationViews extends Component {
         <Route exact path="/employees" render={(props) => {
           return this.isAuthenticated() ? <EmployeeList {...props} /> : <Redirect to="/login" />
         }} />
+        <Route path="/employees/:employeeId(\d+)" render={(props) => {
+          // Pass the employeeId to the EmployeeDetailComponent
+          return this.isAuthenticated() ? <EmployeeDetail {...props} employeeId={parseInt(props.match.params.employeeId)} /> : <Redirect to="/login" />
+        }} />
         <Route path="/employees/new" render={(props) => {
           return this.isAuthenticated() ? <EmployeeForm {...props} /> : <Redirect to="/login" />
         }} />
-        <Route path="/owners" render={(props) => {
+        <Route exact path="/owners" render={(props) => {
           return this.isAuthenticated() ? <OwnerList /> : <Redirect to="/login" />
+        }} />
+        <Route path="/owners/:ownerId(\d+)" render={(props) => {
+          // Pass the ownerId to the OwnerDetailComponent
+          return this.isAuthenticated() ? <OwnerDetail {...props} ownerId={parseInt(props.match.params.ownerId)} /> : <Redirect to="./login" />
         }} />
       </React.Fragment>
     )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 
 class EmployeeCard extends Component {
@@ -10,8 +11,7 @@ class EmployeeCard extends Component {
             <img src={require('./emp.png')} alt="Employee" />
           </picture>
           <h3>Employee: <span className="card-employeeName">{this.props.employeeProp.name}</span></h3>
-          <p>Email: {this.props.employeeProp.email}</p>
-          <button type="button" onClick={() => this.props.deleteEmployee(this.props.employeeProp.id)}>Fire</button>
+          <Link to={`/employees/${this.props.employeeProp.id}`}><button>Details</button></Link>
         </div>
       </div>
     );

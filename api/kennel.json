@@ -30,7 +30,7 @@
     {
       "name": "Henry",
       "breed": "Hound",
-      "available": true,
+      "available": false,
       "id": 4,
       "ownerId": 3,
       "employeeId": 3,
@@ -44,6 +44,15 @@
       "employeeId": 1,
       "locationId": 1,
       "id": 5
+    },
+    {
+      "name": "Breezy",
+      "breed": "Shitzhu",
+      "available": true,
+      "ownerId": 1,
+      "employeeId": 1,
+      "locationId": 1,
+      "id": 6
     }
   ],
   "locations": [
@@ -62,8 +71,14 @@
     {
       "city": "Ironton, Ohio",
       "address": "335 Main Street",
-      "open": true,
+      "open": false,
       "id": 3
+    },
+    {
+      "city": "Ironton, OH",
+      "address": "453 State Street",
+      "open": true,
+      "id": 4
     }
   ],
   "employees": [
@@ -94,8 +109,20 @@
     {
       "name": "Shawn Dead",
       "email": "shawno@gmail.com",
-      "active": true,
+      "active": false,
       "id": 5
+    },
+    {
+      "name": "Judy Jetson",
+      "email": "jetson@gmail.com",
+      "active": true,
+      "id": 6
+    },
+    {
+      "name": "New person",
+      "email": "new person@newperson.com",
+      "active": false,
+      "id": 7
     }
   ],
   "owners": [
@@ -115,7 +142,7 @@
       "id": 3,
       "name": "Jessi Jones",
       "phone": "(606)123-8547",
-      "active": true
+      "active": false
     }
   ]
 }
