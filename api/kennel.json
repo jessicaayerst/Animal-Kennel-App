@@ -83,46 +83,9 @@
   ],
   "employees": [
     {
-      "id": 1,
-      "name": "Jessica Ayerst",
-      "email": "jessicaayerst@gmail.com",
-      "active": true
-    },
-    {
-      "id": 2,
-      "name": "Joann Johnson",
-      "email": "joann@gmail.com",
-      "active": true
-    },
-    {
-      "id": 3,
-      "name": "Justice Jackson",
-      "email": "justicej@gmail.com",
-      "active": true
-    },
-    {
-      "name": "Tommy Spurlock",
-      "email": "tommy1@gmail.com",
-      "active": true,
-      "id": 4
-    },
-    {
-      "name": "Shawn Dead",
-      "email": "shawno@gmail.com",
-      "active": false,
-      "id": 5
-    },
-    {
-      "name": "Judy Jetson",
-      "email": "jetson@gmail.com",
-      "active": true,
-      "id": 6
-    },
-    {
-      "name": "New person",
-      "email": "new person@newperson.com",
-      "active": false,
-      "id": 7
+      "aud": "auth0|5d9df2e8dd1f490e19001d16",
+      "name": "me",
+      "id": 1
     }
   ],
   "owners": [
